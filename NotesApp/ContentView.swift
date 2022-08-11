@@ -9,8 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                SearchBar()
+                Spacer()
+                List {
+                    NavigationLink("1", destination: NoteView())
+                }
+                .listStyle(.inset)
+            }
+            .navigationTitle("Notes")
+        }
     }
 }
 
